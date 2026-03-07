@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import TitleBar from "./components/TitleBar";
+import TextArea from "./components/TextArea";
+import Keyboard from "./components/Keyboard";
 
-function App() {
+import { keyboardLayout } from "./layouts/kannadaLayout";
+import { processKey } from "./engine/kannadaEngine";
+
+export default function App() {
+
+  const [text, setText] = useState("");
+
+  function handleKeyPress(key){
+
+    const newText = processKey(text, key);
+    setText(newText);
+
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+    <div className="app">
+
+      <TitleBar />
+
+      <TextArea text={text} />
+
+      <Keyboard
+        layout={keyboardLayout}
+        onKeyPress={handleKeyPress}
+      />
+
+    </div>
+
+  );
+
+}
