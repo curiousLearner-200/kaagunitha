@@ -3,8 +3,10 @@ import TitleBar from "./components/TitleBar";
 import TextArea from "./components/TextArea";
 import Keyboard from "./components/Keyboard";
 
-import { keyboardLayout } from "./layouts/kannadaLayout";
-import { processKey } from "./engine/kannadaEngine";
+import { kannadaLayout } from "./layouts/kannadaLayout";
+import { processKey } from "./typing_engine/kannadaEngine";
+
+import "./App.css";
 
 export default function App() {
 
@@ -26,7 +28,7 @@ export default function App() {
       <TextArea text={text} />
 
       <Keyboard
-        layout={keyboardLayout}
+        layout={kannadaLayout}
         onKeyPress={handleKeyPress}
       />
 

@@ -1,9 +1,9 @@
-export default function TitleBar(){
+export default function Header() {
 
     return (
-      <div className="titlebar">
-        <h2>Kannada Virtual Keyboard</h2>
-      </div>
+      <header className="header">
+        Kannada Virtual Keyboard
+      </header>
     );
   
   }

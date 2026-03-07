@@ -1,12 +1,15 @@
-export default function TextArea({ text }) {
+export default function TextEditor({text}) {
 
-    return (
+  return (
+    <div className="editor-container">
+
       <textarea
+        className="editor"
         value={text}
         readOnly
-        rows={6}
-        style={{width:"100%"}}
       />
-    );
-  
-  }
+
+    </div>
+  );
+
+}

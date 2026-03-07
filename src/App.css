@@ -1,17 +1,281 @@
-.keyboard {
-  margin-top: 20px;
+/* Global Reset */
+
+* {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  font-family: "Noto Sans Kannada", system-ui, sans-serif;
+  background: #f3f4f6;
+}
+
+/* App container */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+
+.header {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 60px;
+
+  background: #1f2937;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+
+  z-index: 1000;
+}
+
+/* Text editor */
+
+.editor-container {
+
+  margin-top: 60px;
+
+  height: 50vh;
+
+  padding: 16px;
+
+}
+
+.editor {
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+
+  padding: 18px;
+
+  font-size: 28px;
+  line-height: 1.6;
+
+  resize: none;
+  outline: none;
+
+  background: white;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Keyboard container */
+
+.keyboard-container {
+
+  flex: 1;
+
+  display: grid;
+
+  grid-template-columns: 1fr 120px;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  background: linear-gradient(to bottom,
+      #f9fafb,
+      #eef2f7);
+
+}
+
+/* Main keyboard */
+
+.main-keyboard {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+}
+
+/* Rows */
 
 .row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 8px;
+
+  display: grid;
+
+  gap: 8px;
+
 }
 
+/* 13-key rows */
+
+.row13 {
+
+  grid-template-columns: repeat(13, 1fr);
+
+}
+
+/* 5-key rows */
+
+.row5 {
+
+  grid-template-columns: repeat(5, 1fr);
+
+}
+
+/* Bottom special row */
+
+.rowBottom {
+
+  grid-template-columns: 1fr 6fr 2fr 1fr;
+
+}
+
+/*
+   Layout meaning:
+
+   [ಂ] [ spacebar ] [ backspace ] [ಃ]
+
+   1fr | 6fr | 2fr | 1fr
+*/
+
+/* Side consonant panel */
+
+.side-panel {
+
+  display: grid;
+
+  grid-template-rows: repeat(9, 1fr);
+
+  gap: 8px;
+
+}
+
+/* Keys */
+
 .key {
-  padding: 12px;
-  margin: 4px;
-  font-size: 18px;
-  min-width: 40px;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: white;
+
+  font-size: 20px;
+
   cursor: pointer;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.15s ease;
+
+}
+
+/* Hover */
+
+.key:hover {
+
+  background: #e5e7eb;
+
+}
+
+/* Press animation */
+
+.key:active {
+
+  transform: scale(0.92);
+
+  background: #dbeafe;
+
+}
+
+/* Spacebar */
+
+.space {
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  background: #dbeafe;
+
+}
+
+/* Backspace */
+
+.backspace {
+
+  background: #fee2e2;
+
+  font-size: 18px;
+
+}
+
+/* Side panel keys slightly smaller */
+
+.side-panel .key {
+
+  font-size: 18px;
+
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 900px) {
+
+  .keyboard-container {
+
+    grid-template-columns: 1fr 90px;
+
+  }
+
+  .key {
+
+    font-size: 18px;
+
+    height: 44px;
+
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .editor {
+
+    font-size: 22px;
+
+  }
+
+  .keyboard-container {
+
+    grid-template-columns: 1fr 70px;
+
+  }
+
+  .key {
+
+    font-size: 16px;
+
+    height: 40px;
+
+  }
+
 }
