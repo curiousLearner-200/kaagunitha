@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Header from "./components/TitleBar";
-import TextEditor from "./components/TextArea";
+import TextArea from "./components/TextArea";
 import Keyboard from "./components/Keyboard";
 
 import { kannadaLayout } from "./layouts/kannadaLayout";
@@ -142,7 +142,7 @@ export default function App() {
         setPhonetic={setPhonetic}
       />
 
-      <TextEditor
+      <TextArea
         text={text}
         setText={setText}
         fontSize={fontSize}

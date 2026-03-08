@@ -1,4 +1,4 @@
-export default function TextEditor({
+export default function TextArea({
   text,
   setText,
   fontSize,
