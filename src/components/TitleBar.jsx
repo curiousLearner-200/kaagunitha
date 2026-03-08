@@ -11,7 +11,7 @@ export default function Header({
     <header className="header">
 
       <div className="logo-section">
-        <div className="logo-title">Kaagunitha</div>
+        <div className="logo-title">ಕಾಗುಣಿತ</div>
         <div className="logo-subtitle">easy kannada keyboard</div>
       </div>
 
