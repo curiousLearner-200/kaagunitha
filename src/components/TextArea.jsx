@@ -1,38 +1,27 @@
-import { useRef } from "react";
-
 export default function TextEditor({
   text,
   setText,
   fontSize,
-  setCursorPosition
+  setCursorPosition,
+  handleTyping
 }) {
-
-  const textareaRef = useRef(null);
-
-  const handleChange = (e) => {
-    setText(e.target.value);
-  };
-
-  const handleSelect = () => {
-    const pos = textareaRef.current.selectionStart;
-    setCursorPosition(pos);
-  };
 
   return (
 
     <div className="editor-container">
 
       <textarea
-        ref={textareaRef}
         className="editor"
         value={text}
-        onChange={handleChange}
-        onClick={handleSelect}
-        onKeyUp={handleSelect}
+        onChange={(e)=>setText(e.target.value)}
+        onClick={(e)=>setCursorPosition(e.target.selectionStart)}
+        onKeyUp={(e)=>setCursorPosition(e.target.selectionStart)}
+        onKeyDown={handleTyping}
         style={{ fontSize: `${fontSize}px` }}
       />
 
     </div>
 
   );
+
 }

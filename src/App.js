@@ -6,7 +6,7 @@ import Keyboard from "./components/Keyboard";
 
 import { kannadaLayout } from "./layouts/kannadaLayout";
 import { processKey } from "./typing_engine/kannadaEngine";
-
+import { transliterate } from "./engine/phonetic/kannada/phoneticEngine";
 import "./App.css";
 
 export default function App() {
@@ -19,7 +19,64 @@ export default function App() {
 
   const increaseFont = () => setFontSize(f => f + 2);
   const decreaseFont = () => setFontSize(f => Math.max(16, f - 2));
+  const [phonetic,setPhonetic]=useState(false);
+  const [latinBuffer,setLatinBuffer]=useState("");
 
+  const handleTyping = (e) => {
+
+    if (!phonetic) return;
+  
+    const key = e.key;
+  
+    /* HANDLE BACKSPACE */
+  
+    if (key === "Backspace") {
+  
+      e.preventDefault();
+  
+      const newBuffer = latinBuffer.slice(0, -1);
+  
+      setLatinBuffer(newBuffer);
+  
+      const kannada = transliterate(newBuffer);
+  
+      setText(kannada);
+      return;
+    }
+  
+    /* HANDLE SPACE */
+  
+    if (key === " ") {
+  
+      e.preventDefault();
+  
+      const newBuffer = latinBuffer + " ";
+  
+      setLatinBuffer(newBuffer);
+  
+      const kannada = transliterate(newBuffer);
+  
+      setText(kannada);
+  
+      return;
+    }
+  
+    /* IGNORE CONTROL KEYS */
+  
+    if (key.length !== 1) return;
+  
+    /* NORMAL CHARACTER */
+  
+    e.preventDefault();
+  
+    const newBuffer = latinBuffer + key;
+  
+    setLatinBuffer(newBuffer);
+  
+    const kannada = transliterate(newBuffer);
+    setText(kannada);
+  
+  };
 
   const insertAtCursor = (value) => {
 
@@ -70,6 +127,8 @@ export default function App() {
       <Header
         increaseFont={increaseFont}
         decreaseFont={decreaseFont}
+        phonetic={phonetic}
+        setPhonetic={setPhonetic}
       />
 
       <TextEditor
@@ -77,6 +136,7 @@ export default function App() {
         setText={setText}
         fontSize={fontSize}
         setCursorPosition={setCursorPos}
+        handleTyping={handleTyping}
       />
 
       <Keyboard

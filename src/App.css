@@ -295,6 +295,18 @@ body {
 
 }
 
+.phonetic-toggle {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  font-size:14px;
+
+}
+
 /* Responsive adjustments */
 
 @media (max-width: 900px) {
