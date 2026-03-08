@@ -23,70 +23,41 @@ export default function App() {
   const [latinBuffer,setLatinBuffer]=useState("");
 
   const handleTyping = (e) => {
-
     if (!phonetic) return;
-  
     const key = e.key;
-  
-    /* HANDLE BACKSPACE */
-  
     if (key === "Backspace") {
-  
       e.preventDefault();
-  
       const newBuffer = latinBuffer.slice(0, -1);
-  
       setLatinBuffer(newBuffer);
-  
       const kannada = transliterate(newBuffer);
-  
       setText(kannada);
       return;
     }
-  
-    /* HANDLE SPACE */
   
     if (key === " ") {
-  
       e.preventDefault();
-  
       const newBuffer = latinBuffer + " ";
-  
       setLatinBuffer(newBuffer);
-  
       const kannada = transliterate(newBuffer);
-  
       setText(kannada);
-  
       return;
     }
-  
-    /* IGNORE CONTROL KEYS */
   
     if (key.length !== 1) return;
   
-    /* NORMAL CHARACTER */
-  
     e.preventDefault();
-  
     const newBuffer = latinBuffer + key;
-  
     setLatinBuffer(newBuffer);
-  
     const kannada = transliterate(newBuffer);
     setText(kannada);
   
   };
 
   const insertAtCursor = (value) => {
-
     const before = text.slice(0, cursorPos);
     const after = text.slice(cursorPos);
-
     const newText = before + value + after;
-
     setText(newText);
-
     setCursorPos(cursorPos + value.length);
   };
 
