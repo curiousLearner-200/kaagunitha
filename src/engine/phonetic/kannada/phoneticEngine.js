@@ -1,4 +1,4 @@
-import { map, matraMap, independentVowels } from "./transliterationMap";
+import { consonantMap, matraMap, independentVowels } from "./transliterationMap";
 import { logUnicode } from "../../../hooks/helpers"
 
 
@@ -54,7 +54,7 @@ function buildTrie(tokens) {
 }
 
 const consonantTrie = buildTrie(
-  Object.keys(map).sort((a, b) => b.length - a.length)
+  Object.keys(consonantMap).sort((a, b) => b.length - a.length)
 );
 const vowelTrie = buildTrie(
   Object.keys(matraMap).sort((a, b) => b.length - a.length)
@@ -82,7 +82,7 @@ export function transliterate(input) {
 
     const cons = longestMatch(consonantTrie, input, i);
     if (cons) {
-      const consChar = map[cons];
+      const consChar = consonantMap[cons];
       const vowel = longestMatch(vowelTrie, input, i + cons.length);
       if (vowel) {
         output += applyMatra(consChar, vowel);

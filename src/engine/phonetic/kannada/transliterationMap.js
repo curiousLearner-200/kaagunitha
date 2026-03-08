@@ -33,7 +33,7 @@ export const matraMap = {
 };
 
 /* consonants (dead form only) */
-export const map = {
+export const consonantMap = {
 
   k: "ಕ್",
   kh: "ಖ್",
