@@ -80,7 +80,11 @@ function applyAnusvaraRule(prev,next){
 
   // if(next.startsWith("s") || next.startsWith("sh"))
   //   return "ಂ";
+  logUnicode(prev)
+  logUnicode(next)
+  if (!prev) return null;
 
+  if (prev === " ") return null;
   // return null;
   if(!next) return null;
 
@@ -176,6 +180,6 @@ export function transliterate(input) {
 
     i++;
   }
-  logUnicode(output)
+  // logUnicode(output)
   return output;
 }
