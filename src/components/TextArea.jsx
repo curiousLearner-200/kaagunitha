@@ -5,23 +5,17 @@ export default function TextEditor({
   setCursorPosition,
   handleTyping
 }) {
-
   return (
-
     <div className="editor-container">
-
       <textarea
         className="editor"
         value={text}
-        onChange={(e)=>setText(e.target.value)}
-        onClick={(e)=>setCursorPosition(e.target.selectionStart)}
-        onKeyUp={(e)=>setCursorPosition(e.target.selectionStart)}
+        onChange={(e) => setText(e.target.value)}
+        onClick={(e) => setCursorPosition(e.target.selectionStart)}
+        onKeyUp={(e) => setCursorPosition(e.target.selectionStart)}
         onKeyDown={handleTyping}
         style={{ fontSize: `${fontSize}px` }}
       />
-
     </div>
-
   );
-
 }

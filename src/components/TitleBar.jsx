@@ -34,7 +34,7 @@ export default function Header({
           <input
             type="checkbox"
             checked={phonetic}
-            onChange={(e)=>setPhonetic(e.target.checked)}
+            onChange={(e) => setPhonetic(e.target.checked)}
           />
           Phonetic
         </label>

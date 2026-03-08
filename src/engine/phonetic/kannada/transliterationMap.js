@@ -1,7 +1,6 @@
 export const VIRAMA = "್";
 
 /* independent vowels */
-
 export const independentVowels = {
   a: "ಅ",
   A: "ಆ",
@@ -18,7 +17,6 @@ export const independentVowels = {
 };
 
 /* vowel matras */
-
 export const matraMap = {
   a: "",
   A: "ಾ",
@@ -35,7 +33,6 @@ export const matraMap = {
 };
 
 /* consonants (dead form only) */
-
 export const map = {
 
   k: "ಕ್",
@@ -74,14 +71,11 @@ export const map = {
   r: "ರ್",
   l: "ಲ್",
   v: "ವ್",
-
   sh: "ಶ್",
   ssh: "ಷ್",
   s: "ಸ್",
   h: "ಹ್",
-
   L: "ಳ್",
-
   ksh: "ಕ್ಷ್",
   jny: "ಜ್ಞ್"
 };
