@@ -56,6 +56,12 @@ export default function App() {
     setSegmentStart(cursorPos + value.length);
   };
 
+  const handleEnter = () => {
+    commitSegment();
+    insertAtCursor("\n");
+    return;
+  }
+
   const handleBackspace = () => {
     if (cursorPos === 0) return;
     setText(prev => {
@@ -69,9 +75,35 @@ export default function App() {
     setSegmentStart(newPos);
   };
 
+  const handleDelete = () => {
+    if (cursorPos === 0) return;
+    setText(prev => {
+      const before = prev.slice(0, cursorPos);
+      const after = prev.slice(cursorPos + 1);
+      return after ? (before + after) : before;
+    });
+    const newPos = cursorPos + 1;
+    setCursorPos(newPos);
+    setLatinBuffer("");
+    setSegmentStart(newPos);
+  };
+
   const handleTyping = (e) => {
     if (!phonetic) return;
     const key = e.key;
+
+    if (key === "Enter") {
+      e.preventDefault();
+      handleEnter();
+      return;
+    }
+
+    if (key === "Delete") {
+      e.preventDefault();
+      handleDelete();
+      return;
+    }
+
     if (
       key === "Shift" ||
       key === "Control" ||
@@ -79,11 +111,11 @@ export default function App() {
       key === "Meta" ||
       key === "CapsLock" ||
       key === "Tab" ||
-      key === "Enter" ||
       key === "ArrowRight" ||
       key === "ArrowLeft" ||
       key === "ArrowDown" ||
-      key === "ArrowUp"      
+      key === "ArrowUp" ||
+      key === "Home"
     ) {
       return;
     }
