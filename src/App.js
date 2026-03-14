@@ -56,6 +56,12 @@ export default function App() {
     setSegmentStart(cursorPos + value.length);
   };
 
+  const handleEnter = () => {
+    commitSegment();
+    insertAtCursor("\n");
+    return;
+  }
+  
   const handleBackspace = () => {
     if (cursorPos === 0) return;
     setText(prev => {
@@ -71,7 +77,14 @@ export default function App() {
 
   const handleTyping = (e) => {
     if (!phonetic) return;
+
     const key = e.key;
+    if (key === "Enter") {
+      e.preventDefault();
+      handleEnter();
+      return;
+    }
+    
     if (
       key === "Shift" ||
       key === "Control" ||
@@ -83,7 +96,8 @@ export default function App() {
       key === "ArrowRight" ||
       key === "ArrowLeft" ||
       key === "ArrowDown" ||
-      key === "ArrowUp"      
+      key === "ArrowUp" ||
+      key === "Home"     
     ) {
       return;
     }
