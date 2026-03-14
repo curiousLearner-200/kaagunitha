@@ -11,3 +11,17 @@ export const logUnicode = (text) => {
     console.log(`${char}  U+${code}`);
   }
 };
+
+export const copyAll = () => {
+  // Get the text field
+  var transliteratedText = document.getElementById("textArea");
+
+  // Select the text field
+  transliteratedText.select();
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(transliteratedText.value);
+
+  // Alert the copied text
+  alert("Copied text to clipboard");
+}

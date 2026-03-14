@@ -3,10 +3,10 @@ import { MdBackspace } from "react-icons/md";
 
 export default function Key({ label, onPress }) {
 
-  let cls = "key";
+  let cssClassName = "key";
 
-  if (label === "space") cls += " space";
-  if (label === "backspace") cls += " backspace";
+  if (label === "space") cssClassName += " space";
+  if (label === "backspace") cssClassName += " backspace";
 
   let display;
 
@@ -22,7 +22,7 @@ export default function Key({ label, onPress }) {
 
   return (
     <button
-      className={cls}
+      className={cssClassName}
       onClick={() => onPress(label)}
     >
       {display}

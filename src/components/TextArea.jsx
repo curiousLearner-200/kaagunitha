@@ -9,6 +9,7 @@ export default function TextArea({
     <div className="editor-container">
       <textarea
         className="editor"
+        id="textArea"
         value={text}
         onChange={(e) => setText(e.target.value)}
         onClick={(e) => setCursorPosition(e.target.selectionStart)}

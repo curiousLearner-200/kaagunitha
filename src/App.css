@@ -159,7 +159,7 @@ body {
 /* Backspace */
 
 .backspace {
-  background: #fee2e2;
+  background: #f59898;
   font-size: 18px;
 }
 
@@ -185,6 +185,20 @@ body {
 }
 
 .font-btn:hover {
+  background: #4b5563;
+}
+
+.copy-btn {
+  border: none;
+  background: #374151;
+  color: rgb(179, 247, 154);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.copy-btn:hover {
   background: #4b5563;
 }
 

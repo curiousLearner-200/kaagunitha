@@ -1,4 +1,6 @@
 import React from "react";
+import { copyAll } from "../hooks/helpers";
+
 
 export default function Header({
   increaseFont,
@@ -16,6 +18,12 @@ export default function Header({
       </div>
 
       <div className="header-controls">
+        <button
+          className="copy-btn"
+          onClick={copyAll}
+        >
+          Copy All
+        </button>
 
         <button
           className="font-btn"
