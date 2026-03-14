@@ -1,3 +1,6 @@
+import { MdSpaceBar } from "react-icons/md";
+import { MdBackspace } from "react-icons/md";
+
 export default function Key({ label, onPress }) {
 
   let cls = "key";
@@ -5,19 +8,24 @@ export default function Key({ label, onPress }) {
   if (label === "space") cls += " space";
   if (label === "backspace") cls += " backspace";
 
-  const display = label === "space" ? "Space" :
-    label === "backspace" ? "⌫" :
-      label;
+  let display;
+
+  if (label === "space") {
+    display = <MdSpaceBar size={22} />;
+  } 
+  else if (label === "backspace") {
+    display = <MdBackspace size={22} />;
+  } 
+  else {
+    display = label;
+  }
 
   return (
-
     <button
       className={cls}
       onClick={() => onPress(label)}
     >
       {display}
     </button>
-
-  )
-
+  );
 }
