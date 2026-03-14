@@ -68,7 +68,7 @@ export function transliterate(input) {
   let prevConsonant = false;
 
   while (i < input.length) {
-    if (input[i] === "m") {
+    if (input[i] === "n") {
       const nextCons = longestMatch(consonantTrie, input, i + 1);
       if (nextCons) {
         const anuswara = applyAnusvaraRule(output, nextCons);
