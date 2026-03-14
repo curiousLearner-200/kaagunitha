@@ -35,6 +35,12 @@ export default function Keyboard({ layout, onKeyPress }) {
           )}
         </div>
 
+        {/* Numericals */}
+        <div className="row rowDigits">
+          {layout.digits.map(k =>
+            <Key key={k} label={k} onPress={onKeyPress} />
+          )}
+        </div>
       </div>
 
       {/* Side Panel */}

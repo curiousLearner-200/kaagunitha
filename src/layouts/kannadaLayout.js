@@ -14,6 +14,8 @@ export const kannadaLayout = {
 
   side: ["ಯ","ರ","ಲ","ವ","ಶ","ಷ","ಸ","ಹ","ಳ"],
 
-  bottom: ["ಂ","space","backspace","ಃ"]
+  bottom: ["ಂ","space","backspace","ಃ"],
+
+  digits: ["೦","೧","೨","೩","೪","೫","೬","೭","೮","೯"]
 
 };

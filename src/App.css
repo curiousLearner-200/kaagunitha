@@ -104,6 +104,11 @@ body {
   grid-template-columns: repeat(13, 1fr);
 }
 
+/* 10 digits */
+.rowDigits {
+  grid-template-columns: repeat(10, 1fr);
+}
+
 /* 5-key rows */
 .row5 {
   grid-template-columns: repeat(5, 1fr);
