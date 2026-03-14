@@ -15,7 +15,7 @@ export default function App() {
   const [cursorPos, setCursorPos] = useState(0);
   const [fontSize, setFontSize] = useState(28);
   const [phonetic, setPhonetic] = useState(false);
-  const [latinBuffer, setLatinBuffer] = useState("");
+  const [bufferText, setBufferText] = useState("");
   const [segmentStart, setSegmentStart] = useState(0);
 
   const increaseFont = () => setFontSize(f => f + 2);
@@ -32,8 +32,8 @@ export default function App() {
   };
 
   const commitSegment = () => {
-    if (latinBuffer === "") return;
-    const converted = transliterate(latinBuffer);
+    if (bufferText === "") return;
+    const converted = transliterate(bufferText);
     setText(prev => {
       const before = prev.slice(0, segmentStart);
       const after = prev.slice(cursorPos);
@@ -41,7 +41,7 @@ export default function App() {
     });
     const newCursor = segmentStart + converted.length;
     setCursorPos(newCursor);
-    setLatinBuffer("");
+    setBufferText("");
     setSegmentStart(newCursor);
   };
 
@@ -52,7 +52,7 @@ export default function App() {
       return before + value + after;
     });
     setCursorPos(pos => pos + value.length);
-    setLatinBuffer("");
+    setBufferText("");
     setSegmentStart(cursorPos + value.length);
   };
 
@@ -65,7 +65,7 @@ export default function App() {
     });
     const newPos = cursorPos - 1;
     setCursorPos(newPos);
-    setLatinBuffer("");
+    setBufferText("");
     setSegmentStart(newPos);
   };
 
@@ -90,9 +90,9 @@ export default function App() {
 
     if (key === "Backspace") {
       e.preventDefault();
-      if (latinBuffer.length > 0) {
-        const newBuffer = latinBuffer.slice(0, -1);
-        setLatinBuffer(newBuffer);
+      if (bufferText.length > 0) {
+        const newBuffer = bufferText.slice(0, -1);
+        setBufferText(newBuffer);
         applySegment(newBuffer);
       } else {
         handleBackspace();
@@ -109,11 +109,11 @@ export default function App() {
     }
 
     e.preventDefault();
-    const newBuffer = latinBuffer + key;
-    if (latinBuffer === "") {
+    const newBuffer = bufferText + key;
+    if (bufferText === "") {
       setSegmentStart(cursorPos);
     }
-    setLatinBuffer(newBuffer);
+    setBufferText(newBuffer);
     applySegment(newBuffer);
   };
 
