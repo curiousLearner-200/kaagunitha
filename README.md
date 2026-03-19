@@ -1,70 +1,242 @@
-# Getting Started with Create React App
+# Kannada Phonetic Keyboard -- KAAGUNITHA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based Kannada typing tool that allows users to type Kannada using
+English phonetic input.
 
-## Available Scripts
+The application converts English letters into Kannada script in real
+time enabling users to write Kannada easily using a standard keyboard.
 
-In the project directory, you can run:
+This project provides both: - Virtual keyboard - Physical keyboard
+phonetic typing
 
-### `npm start`
+The transliteration engine applies Kannada phonetic rules automatically
+including vowel matras implicit vowels consonant clusters and
+anusvara handling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You can use `Copy All` to copy all text from text area and paste to any word document / editor
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+------------------------------------------------------------------------
 
-### `npm test`
+# Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Phonetic Kannada typing using English keyboard
+-   Virtual + physical keyboard support
+-   Real-time transliteration
+-   Intelligent vowel matra application
+-   Implicit vowel (`a`) handling
+-   Automatic anusvara rule
+-   Fast trie-based transliteration engine
+-   Browser-based interface
 
-### `npm run build`
+------------------------------------------------------------------------
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Technology Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  Component                Technology
+  ------------------------ ---------------------------
+  Frontend                 React
+  Runtime                  Node.js
+  Transliteration Engine   Custom phonetic parser (javascript)
+  Data Structures          Trie-based token matching
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+------------------------------------------------------------------------
 
-### `npm run eject`
+# System Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Hardware: - Minimum 8 GB RAM
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Operating Systems: - Windows - Linux
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Software Dependencies: - Node.js - npm
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Verify installation:
 
-## Learn More
+node -v npm -v
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+------------------------------------------------------------------------
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Installation
 
-### Code Splitting
+Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+git clone `<repository-url>`{=html} cd `<project-folder>`{=html}
 
-### Analyzing the Bundle Size
+Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm install
 
-### Making a Progressive Web App
+------------------------------------------------------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Running the Application
 
-### Advanced Configuration
+From the project root directory run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm start
 
-### Deployment
+The application will start and open in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+------------------------------------------------------------------------
 
-### `npm run build` fails to minify
+# How to Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1.  Launch the application.
+2.  Enable the checkbox: **Phonetic**
+3.  Start typing Kannada using English phonetics.
+
+The engine automatically converts the text into Kannada characters.
+
+------------------------------------------------------------------------
+
+# Transliteration Rules
+
+The transliteration engine converts phonetic tokens into Kannada
+characters using predefined mappings.
+
+## Vowel Mapping
+
+  English   Kannada
+  --------- ---------
+  a         ಅ
+  A         ಆ
+  i         ಇ
+  ee        ಈ
+  u         ಉ
+  oo        ಊ
+  e         ಎ
+  E         ಏ
+  ai        ಐ
+  o         ಒ
+  O         ಓ
+  au        ಔ
+
+## Consonant Mapping
+
+  English   Kannada
+  --------- ---------
+  k         ಕ್
+  kh        ಖ್
+  g         ಗ್
+  gh        ಘ್
+  ng        ಙ್
+  q         ಙ್
+
+  ch        ಚ್
+  chh       ಛ್
+  j         ಜ್
+  jh        ಝ್
+  ny        ಞ್
+  w         ಞ್
+
+  t         ಟ್
+  T         ಠ್
+  d         ಡ್
+  D         ಢ್
+  N         ಣ್
+
+  th        ತ್
+  thh       ಥ್
+  dh        ದ್
+  dhh       ಧ್
+  n         ನ್
+
+  p         ಪ್
+  ph        ಫ್
+  b         ಬ್
+  bh        ಭ್
+  m         ಮ್
+
+  y         ಯ್
+  r         ರ್
+  l         ಲ್
+  v         ವ್
+  sh        ಶ್
+  ssh       ಷ್
+  s         ಸ್
+  h         ಹ್
+  L         ಳ್
+  ksh       ಕ್ಷ್
+  jn        ಜ್ಞ್
+
+for explicit anuswara / otthakshara use virtual key board
+
+------------------------------------------------------------------------
+
+# Demo
+
+Example typing:
+
+nanna hesaru ramesh
+
+Output:
+
+ನನ್ನ ಹೆಸರು ರಮೇಶ್
+
+
+# Example Usage
+
+## Basic Words
+
+  English Input   Kannada Output
+  --------------- ----------------
+  namasthe         ನಮಸ್ತೆ
+  guru             ಗುರು
+  rama             ರಾಮ
+  dEva             ದೇವ
+  kannaDa          ಕನ್ನಡ
+
+## Common Words
+
+  English Input   Kannada
+  --------------- ---------
+  bengaLooru       ಬೆಂಗಳೂರು
+  bhAratha         ಭಾರತ
+  vidhyA           ವಿದ್ಯಾ
+  shakthi          ಶಕ್ತಿ
+  dhharma          ಧರ್ಮ
+  sadhAnandha      ಸದಾನಂದ
+  sshaNmukha       ಷಣ್ಮುಖ
+
+## Complex Words
+
+  English Input   Kannada
+  --------------- ---------
+  prArthhane       ಪ್ರಾರ್ಥನೆ
+  jnAna            ಜ್ಞಾನ
+  kshEtra          ಕ್ಷೇತ್ರ
+  mahAtma          ಮಹಾತ್ಮ
+  jarAsandha       ಜರಾಸಂಧ
+  sachchidhAnandha ಸಚ್ಚಿದಾನಂದ
+------------------------------------------------------------------------
+
+## known issue
+
+* when typing / correcting a word in the middle of sentence, sometimes the whole sentence may
+  get jumbled up / duplicated. In such cases, please add two spaces before editing any word
+  in the middle of phrase/ sentence
+
+* if some thing needs to end in anuswara, use virtual keyboard to insert it
+
+  example phrase:
+  `ಪದ್ಯ೦ ವಧ್ಯಂ, ಗದ್ಯ೦ ಹೃದ್ಯಂ`
+
+  we need to use virtual keyboard for ` ಂ` and `ೃ` 
+------------------------------------------------------------------------
+
+# Contributing
+
+Contributions are welcome.
+
+Possible improvements: 
+- Additional phonetic patterns 
+- Kannada grammar corrections 
+- UI improvements 
+- enhanced mobile support 
+- Additional Indian languages 
+- voice based phonetic typing
+- hosting on web server / CDN
+
+------------------------------------------------------------------------
+
+# License
+
+MIT License
