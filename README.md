@@ -32,12 +32,12 @@ You can use `Copy All` to copy all text from text area and paste to any word doc
 
 # Technology Stack
 
-  Component                Technology
-  ------------------------ ---------------------------
-  Frontend                 React
-  Runtime                  Node.js
-  Transliteration Engine   Custom phonetic parser (javascript)
-  Data Structures          Trie-based token matching
+| Component                | Technology                          |
+|--------------------------|-------------------------------------|
+| Frontend                 | React                               |
+| Runtime                  | Node.js                             |
+| Transliteration Engine   | Custom phonetic parser (JavaScript) |
+| Data Structures          | Trie-based token matching           |
 
 ------------------------------------------------------------------------
 
@@ -49,9 +49,10 @@ Operating Systems: - Windows - Linux
 
 Software Dependencies: - Node.js - npm
 
-Verify installation:
+Verify node / npm installation:
 
-node -v npm -v
+node -v 
+npm -v
 
 ------------------------------------------------------------------------
 
@@ -59,7 +60,9 @@ node -v npm -v
 
 Clone the repository:
 
-git clone `<repository-url>`{=html} cd `<project-folder>`{=html}
+git clone `https://github.com/curiousLearner-200/kaagunitha.git`
+
+cd `kaagunitha`
 
 Install dependencies:
 
@@ -73,7 +76,7 @@ From the project root directory run:
 
 npm start
 
-The application will start and open in your browser.
+The application will start and open in your browser on port 3000.
 
 ------------------------------------------------------------------------
 
@@ -94,66 +97,61 @@ characters using predefined mappings.
 
 ## Vowel Mapping
 
-  English   Kannada
-  --------- ---------
-  a         ಅ
-  A         ಆ
-  i         ಇ
-  ee        ಈ
-  u         ಉ
-  oo        ಊ
-  e         ಎ
-  E         ಏ
-  ai        ಐ
-  o         ಒ
-  O         ಓ
-  au        ಔ
+| English | Kannada |
+| :------ | :------ |
+| a       | ಅ       |
+| A       | ಆ       |
+| i       | ಇ       |
+| ee      | ಈ       |
+| u       | ಉ       |
+| oo      | ಊ       |
+| e       | ಎ       |
+| E       | ಏ       |
+| ai      | ಐ       |
+| o       | ಒ       |
+| O       | ಓ       |
+| au      | ಔ       |
 
 ## Consonant Mapping
 
-  English   Kannada
-  --------- ---------
-  k         ಕ್
-  kh        ಖ್
-  g         ಗ್
-  gh        ಘ್
-  q         ಙ್
-
-  ch        ಚ್
-  chh       ಛ್
-  j         ಜ್
-  jh        ಝ್
-  w         ಞ್
-
-  t         ಟ್
-  T         ಠ್
-  d         ಡ್
-  D         ಢ್
-  N         ಣ್
-
-  th        ತ್
-  thh       ಥ್
-  dh        ದ್
-  dhh       ಧ್
-  n         ನ್
-
-  p         ಪ್
-  ph        ಫ್
-  b         ಬ್
-  bh        ಭ್
-  m         ಮ್
-
-  y         ಯ್
-  r         ರ್
-  l         ಲ್
-  v         ವ್
-  sh        ಶ್
-  ssh       ಷ್
-  s         ಸ್
-  h         ಹ್
-  L         ಳ್
-  ksh       ಕ್ಷ್
-  jn        ಜ್ಞ್
+| English | Kannada |
+| :------ | :------ |
+| k       | ಕ್      |
+| kh      | ಖ್      |
+| g       | ಗ್      |
+| gh      | ಘ್      |
+| q       | ಙ್      |
+| ch      | ಚ್      |
+| chh     | ಛ್      |
+| j       | ಜ್      |
+| jh      | ಝ್     |
+| w       | ಞ್     |
+| t       | ಟ್      |
+| T       | ಠ್      |
+| d       | ಡ್      |
+| D       | ಢ್      |
+| N       | ಣ್      |
+| th      | ತ್      |
+| thh     | ಥ್      |
+| dh      | ದ್      |
+| dhh     | ಧ್      |
+| n       | ನ್      |
+| p       | ಪ್      |
+| ph      | ಫ್      |
+| b       | ಬ್      |
+| bh      | ಭ್      |
+| m       | ಮ್     |
+| y       | ಯ್     |
+| r       | ರ್      |
+| l       | ಲ್      |
+| v       | ವ್      |
+| sh      | ಶ್      |
+| ssh     | ಷ್      |
+| s       | ಸ್      |
+| h       | ಹ್      |
+| L       | ಳ್      |
+| ksh     | ಕ್ಷ್      |
+| jn      | ಜ್ಞ್      |
 
 for explicit anuswara / otthakshara use virtual key board
 
@@ -174,36 +172,36 @@ Output:
 
 ## Basic Words
 
-  English Input   Kannada Output
-  --------------- ----------------
-  namasthe         ನಮಸ್ತೆ
-  guru             ಗುರು
-  rama             ರಾಮ
-  dEva             ದೇವ
-  kannaDa          ಕನ್ನಡ
+  |English Input |  Kannada Output |
+  | :----------- | :-------------- |
+  |namasthe      |   ನಮಸ್ತೆ        |
+  |guru          |   ಗುರು          |
+  |rama          |   ರಾಮ         |
+  |dEva          |   ದೇವ          |
+  |kannaDa       |   ಕನ್ನಡ         |
 
 ## Common Words
 
-  English Input   Kannada
-  --------------- ---------
-  bengaLooru       ಬೆಂಗಳೂರು
-  bhAratha         ಭಾರತ
-  vidhyA           ವಿದ್ಯಾ
-  shakthi          ಶಕ್ತಿ
-  dhharma          ಧರ್ಮ
-  sadhAnandha      ಸದಾನಂದ
-  sshaNmukha       ಷಣ್ಮುಖ
+  | English Input   |   Kannada       |
+  | :-------------- | :-------------- |
+  | bengaLooru      | ಬೆಂಗಳೂರು       |
+  | bhAratha        | ಭಾರತ           |
+  | vidhyA          | ವಿದ್ಯಾ           |
+  | shakthi         | ಶಕ್ತಿ             |
+  | dhharma         | ಧರ್ಮ           |
+  | sadhAnandha     | ಸದಾನಂದ        |
+  | sshaNmukha      | ಷಣ್ಮುಖ          |
 
 ## Complex Words
 
-  English Input   Kannada
-  --------------- ---------
-  prArthhane       ಪ್ರಾರ್ಥನೆ
-  jnAna            ಜ್ಞಾನ
-  kshEtra          ಕ್ಷೇತ್ರ
-  mahAtma          ಮಹಾತ್ಮ
-  jarAsandha       ಜರಾಸಂಧ
-  sachchidhAnandha ಸಚ್ಚಿದಾನಂದ
+ | English Input    | Kannada         |
+ | :--------------  | :-------------- |
+ | prArthhane       | ಪ್ರಾರ್ಥನೆ         |
+ | jnAna            | ಜ್ಞಾನ           |
+ | kshEtra          | ಕ್ಷೇತ್ರ            |
+ | mahAtma          | ಮಹಾತ್ಮ         |
+ | jarAsandha       | ಜರಾಸಂಧ        |
+ | sachchidhAnandha | ಸಚ್ಚಿದಾನಂದ     |
 ------------------------------------------------------------------------
 
 ## known issue
