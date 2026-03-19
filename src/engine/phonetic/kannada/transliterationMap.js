@@ -39,14 +39,12 @@ export const consonantMap = {
   kh: "ಖ್",
   g: "ಗ್",
   gh: "ಘ್",
-  ng: "ಙ್",
   q: "ಙ್",
 
   ch: "ಚ್",
   chh: "ಛ್",
   j: "ಜ್",
   jh: "ಝ್",
-  ny: "ಞ್",
   w: "ಞ್",
 
   t: "ಟ್",

@@ -33,6 +33,8 @@ function applyAnusvaraRule(prev, next) {
 
   if (!next) return null;
 
+  if (next === "y") return null;
+
   if (next.startsWith("n") || next.startsWith("m"))
     return null;
 
