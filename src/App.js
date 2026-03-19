@@ -45,7 +45,7 @@ export default function App() {
     setSegmentStart(newCursor);
   };
 
-  const insertAtCursor = (value) => {
+  const insertAtCursor = (value) => { 
     setText(prev => {
       const before = prev.slice(0, cursorPos);
       const after = prev.slice(cursorPos);
@@ -61,7 +61,20 @@ export default function App() {
     insertAtCursor("\n");
     return;
   }
+
+  const handleDelete = () => {
+    setText(prev => {
+      if (cursorPos >= prev.length) return prev;
   
+      const before = prev.slice(0, cursorPos);
+      const after = prev.slice(cursorPos + 1);
+      return before + after;
+    });
+  
+    setBufferText("");
+    setSegmentStart(cursorPos);
+  };
+
   const handleBackspace = () => {
     if (cursorPos === 0) return;
     setText(prev => {
@@ -82,6 +95,13 @@ export default function App() {
     if (key === "Enter") {
       e.preventDefault();
       handleEnter();
+      return;
+    }
+
+    if (key === "Delete") {
+      e.preventDefault();
+      commitSegment();
+      handleDelete();
       return;
     }
     
